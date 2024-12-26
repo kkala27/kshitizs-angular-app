@@ -1,0 +1,127 @@
+:host {
+  --primary-color: #004d8f; /* Deep blue for primary elements */
+  --secondary-color: #f4f8fc; /* Light greyish-blue background */
+  --text-color: #333; /* Standard text color */
+  --hover-color: #003d73; /* Darker blue for hover effects */
+  --button-bg: #007acc; /* Button background */
+  --button-hover-bg: #005da3; /* Button hover background */
+  --button-text-color: #ffffff; /* Button text color */
+  --nav-bg: #004d8f; /* Navigation background */
+  --nav-text: #ffffff; /* Navigation text color */
+  --nav-hover-bg: #003d73; /* Navigation hover background */
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+h5 {
+  text-align: right;
+}
+
+mat-toolbar {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+mat-toolbar span {
+  font-size: 1.2rem;
+}
+
+nav {
+  background-color: #446786;; /* Deep Blue for a modern look */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #bbdefb; /* Lighter blue on hover */
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+}
+
+.button-container button {
+  background-color: white;
+  color: #1976d2;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #bbdefb;
+  color: white;
+}
+
+
+.spacer {
+  flex-grow: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 64px); /* Account for toolbar height */
+  padding: 2rem;
+  background-color: var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .button-container {
+    margin-left: 0;
+  }
+
+  mat-toolbar span {
+    font-size: 1rem;
+  }
+}

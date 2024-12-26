@@ -1,0 +1,66 @@
+
+<mat-toolbar >
+  <span>Tasks Dashboard</span>
+  <div class="dashboard-actions">
+    <button mat-raised-button  (click)="openNewItemDialog()">Add New Task</button>
+  </div>
+</mat-toolbar>
+<br>
+
+
+<div class="dashboard-content">
+  <mat-table [dataSource]="dashboardData" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.id }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="taskName">
+      <mat-header-cell *matHeaderCellDef> Task Name </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.taskName }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="taskDescription">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.taskDescription }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="createdDate">
+      <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.createdDate | date:'medium' }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.status}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="assignedUser">
+      <mat-header-cell *matHeaderCellDef> Assigned User </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.assignedUser}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="comments">
+      <mat-header-cell *matHeaderCellDef> Comments </mat-header-cell>
+      <mat-cell *matCellDef="let task"> {{ task.comments }} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let task">
+        <button mat-button color="primary" (click)="editTask(task)"><i class="fas fa-edit"></i></button>
+        <button 
+        *ngIf="task.status !== 'ARCHIVED'&&task.status !== 'INACTIVE'" 
+        mat-button 
+        color="primary" 
+        (click)="sendReminder(task)">
+        <i class="fas fa-bell"></i>
+      </button>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  
+</div>

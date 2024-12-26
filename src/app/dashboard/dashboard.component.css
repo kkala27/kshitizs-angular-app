@@ -1,0 +1,147 @@
+:host {
+  --primary-color: #004d8f; /* Primary theme color */
+  --secondary-color: #f4f8fc; /* Light background color */
+  --text-color: #333; /* Standard text color */
+  --table-header-bg: #446786; /* Table header background color */
+  --table-header-text: #ffffff; /* Table header text color */
+  --button-bg: #007acc; /* Button background */
+  --button-hover-bg: #005da3; /* Button hover background */
+  --button-text-color: #ffffff; /* Button text color */
+  --row-hover-bg: #eef4fa; /* Hover background for table rows */
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+mat-toolbar {
+  background-color: #e3f2fd;;
+  color: #030202;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+}
+
+.dashboard-content {
+  width: 100%;
+  height: calc(100vh - 100px); /* Adjusting height to fit screen, minus toolbar and margins */
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+mat-table {
+  width: 100%;
+  height: 100%;
+  display: block; /* Ensures the table takes full width and height of the container */
+}
+
+mat-header-cell,
+mat-cell {
+  padding: 10px;
+  text-align: left;
+}
+
+mat-header-cell {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+mat-row:nth-child(odd) mat-cell {
+  background-color: #f9f9f9;
+}
+
+mat-row:nth-child(even) mat-cell {
+  background-color: #ffffff;
+}
+
+button {
+  margin: 0 5px;
+}
+
+
+mat-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+mat-header-cell, mat-cell {
+  padding: 1rem;
+  text-align: left;
+}
+
+mat-header-row {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: bold;
+}
+
+mat-row:hover {
+  background-color: var(--row-hover-bg);
+}
+
+mat-header-cell {
+  font-size: 1rem;
+}
+
+mat-cell {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+mat-cell button {
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+mat-cell button:hover {
+  color: var(--button-hover-bg);
+}
+
+mat-cell i {
+  font-size: 1.2rem;
+}
+
+.mat-elevation-z8 {
+  box-shadow: none; /* Remove default shadow */
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-content {
+    padding: 0.5rem;
+  }
+
+  mat-cell, mat-header-cell {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  mat-toolbar {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+
+  .dashboard-actions button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
