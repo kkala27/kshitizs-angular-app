@@ -25,3 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## This app requires a backend app to run and retrive the data which can be downloaded from below URL
+Git Repo: https://github.com/kkala27/kshitiz-backend-app
